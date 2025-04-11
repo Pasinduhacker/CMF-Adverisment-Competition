@@ -87,7 +87,7 @@
             color: #2c3e50;
         }
         
-        .universities {
+        .Universities {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
@@ -324,11 +324,11 @@
         <div class="products">
             <div class="product product-keells">
                 <h3>Keells Super</h3>
-                <p>Assigned to: <span id="keells-count">0</span> universities</p>
+                <p>Assigned to: <span id="keells-count">0</span> Universities</p>
             </div>
             <div class="product product-nestomalt">
                 <h3>Nestomalt – Nestlé</h3>
-                <p>Assigned to: <span id="nestomalt-count">0</span> universities</p>
+                <p>Assigned to: <span id="nestomalt-count">0</span> Universities</p>
             </div>
         </div>
         
@@ -339,13 +339,13 @@
         </div>
         <div class="status-text" id="status-text">Preparing assignment...</div>
         
-        <div class="universities" id="universities-container">
+        <div class="Universities" id="Universities-container">
             <!-- Universities will be added here by JavaScript -->
         </div>
     </div>
 
     <script>
-        const universities = [
+        const Universities = [
             "University of Sri Jayewardenepura",
             "University of Kelaniya",
             "University of Moratuwa",
@@ -408,11 +408,11 @@
             assignments = shuffleArray(assignments);
             
             // Clear container
-            const container = document.getElementById('universities-container');
+            const container = document.getElementById('Universities-container');
             container.innerHTML = '';
             
             // Create university elements (hidden)
-            universities.forEach((uni, index) => {
+            Universities.forEach((uni, index) => {
                 const uniElement = document.createElement('div');
                 uniElement.className = `university ${assignments[index].toLowerCase().includes('keells') ? 'keells' : 'nestomalt'}`;
                 uniElement.innerHTML = `
@@ -428,7 +428,7 @@
             await delay(800);
             
             progress.style.width = '30%';
-            statusText.textContent = 'Preparing universities...';
+            statusText.textContent = 'Preparing Universities...';
             await delay(600);
             
             progress.style.width = '50%';
@@ -445,7 +445,7 @@
             // Create confetti
             createConfetti();
             
-            // Reveal universities one by one
+            // Reveal Universities one by one
             const uniElements = document.querySelectorAll('.university');
             for (let i = 0; i < uniElements.length; i++) {
                 uniElements[i].classList.add('visible');
